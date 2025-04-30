@@ -2,7 +2,7 @@
 
 
 ##
-# Color  Variables
+# colour  Variables
 ##
 
 green='\e[32m'
@@ -12,22 +12,22 @@ magenta='\e[35m'
 clear='\e[0m'
 
 ##
-# Color Functions
+# colour Functions
 ##
 
-ColorGreen(){
+colourGreen(){
 	echo -ne $green$1$clear
 }
 
-ColorRed(){
+colourRed(){
 	echo -ne $red$1$clear
 }
 
-ColorMagenta(){
+colourMagenta(){
 	echo -ne $magenta$1$clear
 }
 
-ColorBlue(){
+colourBlue(){
 	echo -ne $blue$1$clear
 }
 
@@ -276,33 +276,33 @@ sudo nano /usr/share/sniper/loot/workspace/$WORKSPACE/scans/scheduled/$OPTION2.s
 menu(){
 echo -ne "
 ~#*#~#*#~#*#~#*#~#*#~#*#~#*#~#*#~#*#~#*#~#*#~#*#~#*#~#*#~
-~#*#~  $(ColorRed 'Unit98 Guided Vulnerability Assessment tool')  ~#*#~
+~#*#~  $(colourRed 'Unit98 Guided Vulnerability Assessment tool')  ~#*#~
 ~#*#~#*#~#*#~#*#~#*#~#*#~#*#~#*#~#*#~#*#~#*#~#*#~#*#~#*#~
 
-$(ColorBlue 'Current Target: ')$(ColorRed $TARGET)
+$(colourBlue 'Current Target: ')$(colourRed $TARGET)
 
-$(ColorBlue '                  ~#*#~ Staging ~#*#~')
+$(colourBlue '                  ~#*#~ Staging ~#*#~')
 
-$(ColorBlue '00') $(ColorRed 'Lazy') $(ColorMagenta 'Mode')
-$(ColorRed '1)') Setup dependancies
-$(ColorRed '2)') Install Sniper 
-$(ColorRed '3)') Initialise Metasploit database
-$(ColorMagenta '4)') Set Target Information
+$(colourBlue '00') $(colourRed 'Lazy') $(colourMagenta 'Mode')
+$(colourRed '1)') Setup dependancies
+$(colourRed '2)') Install Sniper 
+$(colourRed '3)') Initialise Metasploit database
+$(colourMagenta '4)') Set Target Information
 
-$(ColorRed '                  ~#*#~ Attack ~#*#~')
+$(colourRed '                  ~#*#~ Attack ~#*#~')
 
-$(ColorGreen '5)') Sub-Domain Enumeration
-$(ColorGreen '6)') Strict Directory Enumeration
-$(ColorGreen '7)') Directory Enumeration
-$(ColorBlue '8)') Vulnerability Scan using Nmap
-$(ColorRed '9)') Vulnerability Scan with Sn1per
+$(colourGreen '5)') Sub-Domain Enumeration
+$(colourGreen '6)') Strict Directory Enumeration
+$(colourGreen '7)') Directory Enumeration
+$(colourBlue '8)') Vulnerability Scan using Nmap
+$(colourRed '9)') Vulnerability Scan with Sn1per
 
-$(ColorMagenta '                  ~#*#~ Reporting ~#*#~')
+$(colourMagenta '                  ~#*#~ Reporting ~#*#~')
 
-$(ColorBlue '10)') Import into Metasploit 
-$(ColorRed '0)') Exit
+$(colourBlue '10)') Import into Metasploit 
+$(colourRed '0)') Exit
 
-$(ColorBlue 'Choose an option:') "
+$(colourBlue 'Choose an option:') "
         read a
         case $a in
 	        00) echo "Lazy Mode Activated!" ; setup_dependancies ; sniper_setup ; init_msf ; clear ; targetinfo ; clear ; domain_enum ; clear ; sn1per_workspace ; clear ; sn1per_menu ;;
@@ -328,33 +328,33 @@ $(ColorBlue 'Choose an option:') "
 sn1per_menu(){
 echo -ne "
 ~#*#~#*#~#*#~#*#~#*#~#*#~#*#~#*#~#*#~#*#~#*#~#*#~#*#~#*#~
-~#*#~  $(ColorRed 'Unit98 Guided Vulnerability Assessment tool')  ~#*#~
+~#*#~  $(colourRed 'Unit98 Guided Vulnerability Assessment tool')  ~#*#~
 ~#*#~          Sn1per Configuration options         ~#*#~
 ~#*#~#*#~#*#~#*#~#*#~#*#~#*#~#*#~#*#~#*#~#*#~#*#~#*#~#*#~
 
-$(ColorRed '*  Please start by selecting a workspace *')
-$(ColorBlue 'Current Target: ')$(ColorRed $TARGET)
-$(ColorBlue 'Current Workspace: ')$(ColorRed $WORKSPACE)
+$(colourRed '*  Please start by selecting a workspace *')
+$(colourBlue 'Current Target: ')$(colourRed $TARGET)
+$(colourBlue 'Current Workspace: ')$(colourRed $WORKSPACE)
 
-$(ColorBlue '                  ~#*#~ Staging ~#*#~')
+$(colourBlue '                  ~#*#~ Staging ~#*#~')
 
-$(ColorRed '00)') List Workspaces & Select a Workspace
-$(ColorRed '01)') Perform Discovery on $TARGET
-$(ColorRed '                  ~#*#~ Attack ~#*#~')
+$(colourRed '00)') List Workspaces & Select a Workspace
+$(colourRed '01)') Perform Discovery on $TARGET
+$(colourRed '                  ~#*#~ Attack ~#*#~')
 
-$(ColorMagenta '1)') Schedule a scan (Daily|Weekly|Monthly)
-$(ColorGreen '2)') Mass Web Scan
-$(ColorGreen '3)') Mass Vulnerability Scan
-$(ColorRed '4)') NUKE MODE: USE WITH CAUTION & AUTHORISATION!!
-$(ColorGreen '5)') Pass Sn1per domains to NMAP for vuln scan
+$(colourMagenta '1)') Schedule a scan (Daily|Weekly|Monthly)
+$(colourGreen '2)') Mass Web Scan
+$(colourGreen '3)') Mass Vulnerability Scan
+$(colourRed '4)') NUKE MODE: USE WITH CAUTION & AUTHORISATION!!
+$(colourGreen '5)') Pass Sn1per domains to NMAP for vuln scan
 
-$(ColorMagenta '                  ~#*#~ Reporting ~#*#~')
+$(colourMagenta '                  ~#*#~ Reporting ~#*#~')
 
-$(ColorMagenta '6)') Export NMAP Scan results to Metasploit
-$(ColorGreen '7)') Back to main menu
-$(ColorRed '0)') Exit
+$(colourMagenta '6)') Export NMAP Scan results to Metasploit
+$(colourGreen '7)') Back to main menu
+$(colourRed '0)') Exit
 
-$(ColorBlue 'Choose an option:') "
+$(colourBlue 'Choose an option:') "
         read b
         case $b in
 	        00) sn1per_workspace ; clear ; sn1per_menu ;;
@@ -374,26 +374,26 @@ $(ColorBlue 'Choose an option:') "
 sn1per_schedule_menu(){
 echo -ne "
 ~#*#~#*#~#*#~#*#~#*#~#*#~#*#~#*#~#*#~#*#~#*#~#*#~#*#~#*#~
-~#*#~  $(ColorRed 'Unit98 Guided Vulnerability Assessment tool')  ~#*#~
+~#*#~  $(colourRed 'Unit98 Guided Vulnerability Assessment tool')  ~#*#~
 ~#*#~          Sn1per Scheduled Scan Options        ~#*#~
 ~#*#~#*#~#*#~#*#~#*#~#*#~#*#~#*#~#*#~#*#~#*#~#*#~#*#~#*#~
 
-$(ColorBlue 'Current Target: ')$(ColorRed $TARGET)
-$(ColorBlue 'Current Workspace: ')$(ColorRed $WORKSPACE)
+$(colourBlue 'Current Target: ')$(colourRed $TARGET)
+$(colourBlue 'Current Workspace: ')$(colourRed $WORKSPACE)
 
-$(ColorRed '*  Scheduling a scan will require knowledge of Sn1per!  *')
-$(ColorBlue 'For more information read this help file')
-$(ColorRed '00)') Help with Sn1per scheduled commands
+$(colourRed '*  Scheduling a scan will require knowledge of Sn1per!  *')
+$(colourBlue 'For more information read this help file')
+$(colourRed '00)') Help with Sn1per scheduled commands
 
-$(ColorRed '           ~#*#~ Schedule Assistant ~#*#~')
+$(colourRed '           ~#*#~ Schedule Assistant ~#*#~')
 
-$(ColorMagenta '1)') Choose your schedule
-$(ColorMagenta '2)') View current schedules
-$(ColorRed '3)') List & Change Workspaces
-$(ColorGreen '5)') Back to main menu
-$(ColorRed '0)') Exit
+$(colourMagenta '1)') Choose your schedule
+$(colourMagenta '2)') View current schedules
+$(colourRed '3)') List & Change Workspaces
+$(colourGreen '5)') Back to main menu
+$(colourRed '0)') Exit
 
-$(ColorBlue 'Choose an option:') "
+$(colourBlue 'Choose an option:') "
         read c
         case $c in
 	        00) sn1per_schedule_help ; sn1per_menu ;;
@@ -409,26 +409,26 @@ $(ColorBlue 'Choose an option:') "
 sn1per_schedule_module_menu(){
 echo -ne "
 ~#*#~#*#~#*#~#*#~#*#~#*#~#*#~#*#~#*#~#*#~#*#~#*#~#*#~#*#~
-~#*#~  $(ColorRed 'Unit98 Guided Vulnerability Assessment tool')  ~#*#~
+~#*#~  $(colourRed 'Unit98 Guided Vulnerability Assessment tool')  ~#*#~
 ~#*#~          Sn1per Scheduled Scan Options        ~#*#~
 ~#*#~#*#~#*#~#*#~#*#~#*#~#*#~#*#~#*#~#*#~#*#~#*#~#*#~#*#~
 
-$(ColorBlue 'Current Target: ')$(ColorRed $WORKSPACE)
-$(ColorBlue 'Current Workspace: ')$(ColorRed $WORKSPACE)
-$(ColorBlue 'Current Schedule: ')$(ColorRed $OPTION)$(ColorRed '.sh')
+$(colourBlue 'Current Target: ')$(colourRed $WORKSPACE)
+$(colourBlue 'Current Workspace: ')$(colourRed $WORKSPACE)
+$(colourBlue 'Current Schedule: ')$(colourRed $OPTION)$(colourRed '.sh')
 
-$(ColorRed '           ~#*#~ Schedule Assistant ~#*#~')
+$(colourRed '           ~#*#~ Schedule Assistant ~#*#~')
 
-$(ColorRed '*  Choose what type of scan you want to schedule:  *')
+$(colourRed '*  Choose what type of scan you want to schedule:  *')
 
-$(ColorBlue '1)') Mass Web Scan
-$(ColorBlue '2)') Mass Vulnerability Scan
-$(ColorRed '3)') NMAP Vulnerability Scan
-$(ColorGreen '4)') NUKE MODE
-$(ColorGreen '5)') Back
-$(ColorRed '0)') Exit
+$(colourBlue '1)') Mass Web Scan
+$(colourBlue '2)') Mass Vulnerability Scan
+$(colourRed '3)') NMAP Vulnerability Scan
+$(colourGreen '4)') NUKE MODE
+$(colourGreen '5)') Back
+$(colourRed '0)') Exit
 
-$(ColorBlue 'Choose an option:') "
+$(colourBlue 'Choose an option:') "
         read d
         case $d in
 	        1) sn1per_scheduled_mass_web_scan ; clear ; sn1per_schedule_menu ;;
